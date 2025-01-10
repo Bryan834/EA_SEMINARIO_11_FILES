@@ -8,8 +8,8 @@ services:
       - mongodb_data:/data/db
 
   backend:
-    image: jordi9675/teachme-backend:latest
-    container_name: teachme-backend
+    image: bryan834/teachme_backend_seminari:v1
+    container_name: teachme_backend_seminari
     ports:
       - "3000:3000"
     environment:
@@ -18,10 +18,10 @@ services:
       - mongodb
 
   frontend:
-    image: jordi9675/teachme-frontend:latest
-    container_name: teachme-frontend
+    image: bryan834/teachme_frontend_seminari:v1
+    container_name: teachme_frontend_seminari
     ports:
-      - "51139:51139" # Puerto expuesto del frontend
+      - "51139:51139" 
     depends_on:
       - backend
 
